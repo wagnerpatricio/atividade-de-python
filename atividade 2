@@ -1,0 +1,16 @@
+def main():
+    stack: List[int] = [1001, 1002, 1003, 1004, 1005]
+    placa = 10
+    print(conseguir_sair(stack, placa))
+
+def conseguir_sair(stack, placa):
+    carros_para_retirar = 0
+    for element in stack[::-1]:
+        if element != placa:
+            carros_para_retirar += 1
+        elif element == placa:
+            return carros_para_retirar
+
+    return 'Não existe nenhum carro com essa placa'
+
+main()
